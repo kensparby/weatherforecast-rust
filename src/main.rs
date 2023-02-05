@@ -91,7 +91,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
 // This uses the font 'Weather Icons' (https://erikflowers.github.io/weather-icons/) in my case,
 // but you can substitute any icon set you desire by changing these entries.
 fn symbol_icon(value: &str) -> &str {
-    match value {
+    let (first_part, _) = value.split_at(value.find('_').unwrap_or(value.len()));
+    match first_part {
         "clearsky" => " ",
         "cloudy" => " ",
         "fair" => " ",
