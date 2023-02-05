@@ -7,6 +7,7 @@ Uses the [Weather Icons](https://erikflowers.github.io/weather-icons/) in my cas
 Disclaimer: I do not know what I'm doing in Rust.
 
 ![Screenshot in use as a Polybar module](./screenshot.png?raw=true)
+In use as a Polybar module. See leftmost module.
 
 ### Special thanks
 
