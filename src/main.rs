@@ -87,11 +87,13 @@ async fn main() -> Result<(), Box<dyn Error>> {
     Ok(())
 }
 
-// Function to replace the collected weather data into icons instead.
+// Function to replace the collected weather data with icons.
 // This uses the font 'Weather Icons' (https://erikflowers.github.io/weather-icons/) in my case,
 // but you can substitute any icon set you desire by changing these entries.
 fn symbol_icon(value: &str) -> &str {
+    // Sometimes the data is suffixed by e.g. '_day'. Let's remove that part.
     let (first_part, _) = value.split_at(value.find('_').unwrap_or(value.len()));
+
     match first_part {
         "clearsky" => " ",
         "cloudy" => " ",

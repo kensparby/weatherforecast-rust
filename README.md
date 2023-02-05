@@ -1,6 +1,6 @@
 # Weather Forecast
 
-Prints the next 6 hours of weather in icon form, as a single string.
+Prints the next 6 hours of weather in icon form, as a single string. Uses the [Location Forecast 2.0 API](https://api.met.no/weatherapi/locationforecast/2.0/documentation) from Met.no
 <br>
 I use this as a module for Polybar.
 
