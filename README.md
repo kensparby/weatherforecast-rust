@@ -5,5 +5,5 @@ Uses the [Weather Icons](https://erikflowers.github.io/weather-icons/) in my cas
 
 Disclaimer: I do not know what I'm doing in Rust.
 
-# Special thanks
+### Special thanks
 - Mom
