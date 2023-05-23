@@ -52,12 +52,14 @@ async fn main() -> Result<(), Box<dyn Error>> {
     let res = client
         .get("https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=60.12237&lon=11.47005")
         .header("Accept", "text/plain")
-        .header("User-Agent", "bearer_token") // The API requires a user-agent be supplied. Anything you want, just make it unique.
+        .header("User-Agent", "YOUR_UNIQUE_STRING_HERE") // The API requires a user-agent be supplied. Anything you want, just make it unique.
         .timeout(Duration::from_secs(3))
         .send()
-        .await?
+        .await
+        .map_err(|_| "Failed".to_owned())? // Map any error message to a new error message containing just the word 'Failed'
         .text()
-        .await?;
+        .await
+        .map_err(|_| "Failed".to_owned())?; // Map any error message to a new error message containing just the word 'Failed'
 
     let data = r#res;
     let feature: Feature = serde_json::from_str(&data).unwrap();
